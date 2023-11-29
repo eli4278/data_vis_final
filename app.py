@@ -112,34 +112,6 @@ df1.head()
 
 import plotly.graph_objects as go
 
-fig = go.Figure(data=go.Scattergeo(
-    lat = df1['lon'],
-    lon = df1['lat'],
-    text = df1['city'],
-    mode = 'markers',
-    marker = dict(
-        size = 8,
-        opacity = 0.8,
-        reversescale = False,
-        autocolorscale = False,
-        symbol = 'square',
-        line = dict(
-            width=1,
-            color='rgba(102, 102, 102)'
-        ),
-        cmin = 62,
-        color = df1['walkability'],
-        cmax = df1['walkability'].max(),
-        colorbar_title="Walkability"
-    )
-))
-
-fig.update_layout(
-    title = 'Europe Cities<br>(Hover for City information)',
-    geo_scope='europe',
-)
-fig.show()
-
 
 # Transfer Map to Dash
 
